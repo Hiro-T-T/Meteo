@@ -11,14 +11,14 @@ public class Spawn : MonoBehaviour {
     int spawn_time = 0;
     int score = 0;
     private ScoreManager score_manager;
-    private stageManager stage_manager;
+    private StageManager stage_manager;
     // Use this for initialization
     void Start()
     {
         Spawn_p();    //初期スポーン
         pos = gameObject.transform.position;
         score_manager = GameObject.Find("GameController").GetComponent<ScoreManager>();
-        stage_manager = GameObject.Find("GameController").GetComponent<stageManager>();
+        stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
     }
 
     // Update is called once per frame
@@ -32,14 +32,15 @@ public class Spawn : MonoBehaviour {
         }
         if (stage_manager.backgroundFlag == false)
         {
-            pattern = Random.Range(1, 3);
+           
             // pattern = 2;
             timer += Time.deltaTime;    //経過時間加算
             if (timer >= interval)
             {
                 Spawn_p();    //スポーン実行
             }
-          
+            else pattern = Random.Range(1, 7);
+
         }
 
 
@@ -51,28 +52,44 @@ public class Spawn : MonoBehaviour {
             
 
             case 1:
-                     GameObject.Instantiate(enemy[0], pos, Quaternion.identity);
-                  
-                    spawn_init();
-                
-                break;
-            case 2:
-                spawn_time++;
+                  GameObject.Instantiate(enemy[0], pos, Quaternion.identity);
+                  spawn_init();
+                  break;
 
-                if (spawn_time < 2)
-                {
-                    GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
-                    
-                }
-                
-                if(spawn_time > 15)
-                {
-                    GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
-             
-                    spawn_init();
-                }
-                
+            case 2:
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
                 break;
+
+            case 3:
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
+
+            case 4:
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
+
+            case 5:
+                spawn_time++;
+                if(spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                if(spawn_time == 42) GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if(spawn_time == 82) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                if(spawn_time > 85) spawn_init();
+                break;
+
+            case 6:
+                spawn_time++;
+                if (spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == 42) GameObject.Instantiate(enemy[0], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == 92) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time > 95) spawn_init();
+                break;
+
 
         }
         
@@ -83,7 +100,7 @@ public class Spawn : MonoBehaviour {
     void spawn_init()
     {
         spawn_count++;
-        interval = Random.Range(2.5f, 5.0f);
+        interval = 2.0f;
         spawn_time = 0;
         timer = 0;  //初期化
     }

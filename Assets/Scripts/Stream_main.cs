@@ -329,13 +329,13 @@ namespace Kvant
             if (_lineMaterial)    DestroyImmediate(_lineMaterial);
             if (_debugMaterial)   DestroyImmediate(_debugMaterial);
         }
-        private stageManager stage_manager;
+        private StageManager stage_manager;
         private Spawn spawn;
         private int backgroundTime = 0;
 
         void Start()
         {
-            stage_manager = GameObject.Find("GameController").GetComponent<stageManager>();
+            stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
             spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
         }
 
