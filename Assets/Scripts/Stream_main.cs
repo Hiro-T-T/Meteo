@@ -329,9 +329,46 @@ namespace Kvant
             if (_lineMaterial)    DestroyImmediate(_lineMaterial);
             if (_debugMaterial)   DestroyImmediate(_debugMaterial);
         }
+        private stageManager stage_manager;
+        private Spawn spawn;
+        private int backgroundTime = 0;
+
+        void Start()
+        {
+            stage_manager = GameObject.Find("GameController").GetComponent<stageManager>();
+            spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
+        }
 
         void Update()
         {
+           
+            //  transform.Rotate(0.0f, 0.0f, stage_manager.game_rotate);
+            if(stage_manager.backgroundFlag == true)
+            {
+                backgroundTime++;
+                if (backgroundTime < 180)
+                {
+                    _maxSpeed++;
+                    _tail = 200 / _maxSpeed;
+                    if (_maxSpeed >= 1000) _maxSpeed = 1000;
+                }
+                else
+                {
+                    _maxSpeed--;
+                    _tail = 200 / maxSpeed;
+                    if (_maxSpeed <= (3 * spawn.spawn_count))
+                    {
+                        _maxSpeed = (3 * spawn.spawn_count);
+                        spawn.spawn_count++;
+                        spawn.interval = 0;
+                        //spawn.SendMessage("Spawn_p");
+                        backgroundTime = 0;
+                        stage_manager.backgroundFlag = false;
+                    }
+                }
+            }
+            Debug.Log(backgroundTime);
+            
             if (_needsReset) ResetResources();
 
             UpdateKernelShader();
