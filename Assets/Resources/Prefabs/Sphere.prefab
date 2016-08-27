@@ -219,6 +219,8 @@ MonoBehaviour:
   fuwa_time: 240
   fuwa_range: 2
   fuwa_speed: 0.2
+  up_count: 10
+  initFlag: 0
 --- !u!135 &135000011558574892
 SphereCollider:
   m_ObjectHideFlags: 1

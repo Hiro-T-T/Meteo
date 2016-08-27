@@ -15,6 +15,8 @@ public class UFO_move : MonoBehaviour {
     private Spawn spawn;
     private StageManager stage_manager;
     public int up_count = 10;
+    public bool initFlag = false;
+    private int direction = 1;
     // Use this for initialization
     void Start()
     {
@@ -27,14 +29,15 @@ public class UFO_move : MonoBehaviour {
         start_pos = pos;
         if(spawn.spawn_count % up_count == 0)
         {
-            stage_manager.add_speed *= 2;
-            stage_manager.fuwa_add += 1;
+            stage_manager.add_speed *= 1.5f;
+            stage_manager.fuwa_add += 0.3f;
         }
        
         stage_manager.fuwa_add_speed = (spawn.spawn_count) / 15;
         if (fuwa_random == 1)
         {
-            fuwa_range *= -1;
+            direction *= -1;
+            
         }
 
     }
@@ -46,12 +49,17 @@ public class UFO_move : MonoBehaviour {
        
         pos.z -= (fuwa_speed + stage_manager.add_speed);
         fuwa += stage_manager.fuwa_add;
-        pos.x = start_pos.x + (Mathf.Sin(Mathf.PI * 2 / fuwa_time * fuwa)) * (fuwa_range + stage_manager.fuwa_add_speed);
+        pos.x = start_pos.x + (Mathf.Sin(Mathf.PI * 2 / fuwa_time * fuwa)) * ((fuwa_range + stage_manager.fuwa_add_speed) * direction);
     }
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Death")
         {
+            if(initFlag == true)
+            {
+               
+                spawn.timer = 0;  //初期化
+            }
             Destroy(gameObject);
         }
     }

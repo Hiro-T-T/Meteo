@@ -8,6 +8,7 @@ public class StageManager : MonoBehaviour {
     public float add_speed = 0.2f;
     public float fuwa_add_speed = 2.0f;
     public float fuwa_add = 2.0f;
+    public bool backgroundFlag = false;
 
     // Use this for initialization
     void Start () {
