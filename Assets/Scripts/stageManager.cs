@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class stageManager : MonoBehaviour {
+public class StageManager : MonoBehaviour {
     public float game_rotate = 0.0f;
     private int rotate_time = 0;
 

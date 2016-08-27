@@ -13,14 +13,14 @@ public class UFO_move : MonoBehaviour {
     public float fuwa_speed = 0.1f;
     private int fuwa_random = Random.Range(1, 3);
     private Spawn spawn;
-    private stageManager stage_manager;
+    private StageManager stage_manager;
     public int up_count = 10;
     public bool initFlag = false;
     private int direction = 1;
     // Use this for initialization
     void Start()
     {
-        stage_manager = GameObject.Find("GameController").GetComponent<stageManager>();
+        stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
         pos = gameObject.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
