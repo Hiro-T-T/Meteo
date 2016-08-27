@@ -7,7 +7,10 @@ public class playerMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pos = gameObject.transform.position;
-
+        if (Input.touchSupported)
+        {
+            Debug.Log("ちん");
+        }
 	
 	}
 	
@@ -16,11 +19,12 @@ public class playerMove : MonoBehaviour {
 
         gameObject.transform.position = pos;
 
-	if(Input.touchCount > 0)
+	    if(Input.touchCount > 0)
         {
             if(touch.phase == TouchPhase.Moved)
             {
-                pos.x = touch.position.x;
+                //pos.x = touch.deltaPosition.x;
+                Debug.Log("タッチー");
             }
         }
 	}
