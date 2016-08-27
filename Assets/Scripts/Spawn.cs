@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Spawn : MonoBehaviour {
-    public GameObject enemy1;    //敵オブジェクト
-    public GameObject enemy2;    //敵オブジェクト
+    public GameObject[] enemy;    //敵オブジェクト
     private Vector3 pos;
     private int pattern;     //一度に何体のオブジェクトをスポーンさせるか
     public float interval = 1;  //何秒おきに敵を発生させるか
@@ -52,7 +51,7 @@ public class Spawn : MonoBehaviour {
             
 
             case 1:
-                     GameObject.Instantiate(enemy1, pos, Quaternion.identity);
+                     GameObject.Instantiate(enemy[0], pos, Quaternion.identity);
                   
                     spawn_init();
                 
@@ -62,13 +61,13 @@ public class Spawn : MonoBehaviour {
 
                 if (spawn_time < 2)
                 {
-                    GameObject.Instantiate(enemy2, new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                    GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
                     
                 }
                 
                 if(spawn_time > 15)
                 {
-                    GameObject.Instantiate(enemy2, new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                    GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
              
                     spawn_init();
                 }
@@ -76,15 +75,7 @@ public class Spawn : MonoBehaviour {
                 break;
 
         }
-        /*
-    
-            //スポーン座標指定
-            float x = Random.Range(-50f, 50f);
-            float y = Random.Range(0f, 100f);
-            float z = Random.Range(-50f, 50f);
-            */
-            //Enemy出現
-         //   GameObject.Instantiate(enemy, pos, Quaternion.identity);
+        
             Debug.Log("Spawn");//Debug
         
 
