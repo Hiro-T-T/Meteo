@@ -35,7 +35,7 @@ public class Spawn : MonoBehaviour {
             float z = Random.Range(-50f, 50f);
             //床から浮かしている
             Vector3 pos = new Vector3(x, y, z) + ground.position;
-            //Enemt出現
+            //Enemy出現
             GameObject.Instantiate(enemy, pos, Quaternion.identity);
             Debug.Log("Spawn");//Debug
         }
