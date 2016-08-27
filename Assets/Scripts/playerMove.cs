@@ -16,7 +16,7 @@ public class playerMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         //クリック時（タッチ時）
         if(Input.GetMouseButtonDown(0) == true)
@@ -53,11 +53,12 @@ public class playerMove : MonoBehaviour {
         }
 
   }
-    void OnCollisionEnter(Collision col)
+    void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Enemy")
         {
             //ゲームオーバー処理
+            Destroy(gameObject);
         }
     }
 }

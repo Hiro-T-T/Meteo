@@ -16,7 +16,7 @@ public class UFO_move : MonoBehaviour {
     {
         pos = gameObject.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        pos.z = 50;
+       // pos.z = 0;
         pos.y = player.transform.position.y;
         start_pos = pos;
     }
