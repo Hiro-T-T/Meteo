@@ -36,9 +36,10 @@ public class moveScene : MonoBehaviour
             color.a = Mathf.Abs(Mathf.Sin(m_Time));
             m_Graphics.color = color;
             yield return new WaitForSeconds(m_DeltaTime);
-            if (Input.anyKey)
+            if (Input.GetMouseButton(0))
             {
-                m_AngularFrequency = 100f;
+                m_DeltaTime = 0.1f;
+                m_AngularFrequency = 11f;
                 Debug.Log("press");
                 Invoke("DelayMethod", moveSceneSec);
             }
