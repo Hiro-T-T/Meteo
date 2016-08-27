@@ -75,7 +75,7 @@ Material:
       second: 0
     - first:
         name: _BumpScale
-      second: 1
+      second: 0.5
     - first:
         name: _Cutoff
       second: 0.5
