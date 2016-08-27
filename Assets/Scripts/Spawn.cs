@@ -53,7 +53,7 @@ public class Spawn : MonoBehaviour {
                     
                 }
                 
-                if(spawn_time >= 15)
+                if(spawn_time > 15)
                 {
                     GameObject.Instantiate(enemy2, new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
                     
