@@ -52,9 +52,12 @@ public class playerMove : MonoBehaviour {
 
         }
 
-
-
-           
-        
-	}
+  }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            //ゲームオーバー処理
+        }
+    }
 }
