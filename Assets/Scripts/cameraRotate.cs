@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class cameraRotate : MonoBehaviour {
-    private stageManager stage_manager;
+    private StageManager stage_manager;
 	// Use this for initialization
 	void Start () {
-        stage_manager = GameObject.Find("GameController").GetComponent<stageManager>();
+        stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
 	}
 	
 	// Update is called once per frame
