@@ -13,6 +13,6 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         score += 1;
-        Debug.Log(score);
+      //  Debug.Log(score);
 	}
 }
