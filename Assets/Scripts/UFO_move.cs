@@ -45,7 +45,7 @@ public class UFO_move : MonoBehaviour {
     {
         gameObject.transform.position = pos;
         pos.y = player.transform.position.y;
-        pos.z -= (fuwa_speed + stage_manager.add_speed);
+        pos.z -= (fuwa_speed + stage_manager.add_speed + stage_manager.item_speed);
         fuwa += stage_manager.fuwa_add;
         pos.x = start_pos.x + (Mathf.Sin(Mathf.PI * 2 / fuwa_time * fuwa)) * ((fuwa_range + stage_manager.fuwa_add_speed) * direction);
     }
@@ -58,5 +58,9 @@ public class UFO_move : MonoBehaviour {
             
             Destroy(gameObject);
         }
+    }
+    void ItemHit()
+    {
+        fuwa_speed = -(5 + stage_manager.item_speed);
     }
 }

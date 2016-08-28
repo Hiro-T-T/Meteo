@@ -13,6 +13,7 @@ public class playerMove : MonoBehaviour {
     public GameObject effect;
     public GameObject se_obj;
     private Vector3 ef_pos;
+    private StageManager stage_manager;
     //public AudioClip audioClip;
     //AudioSource audioSource;
 
@@ -20,6 +21,7 @@ public class playerMove : MonoBehaviour {
     void Start () {
         pos = gameObject.transform.position;
         ef_pos = effect.transform.position;
+        stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
         //audioSource = gameObject.GetComponent<AudioSource>();
         //audioSource.clip = audioClip;
     }
@@ -69,8 +71,16 @@ public class playerMove : MonoBehaviour {
         if (col.gameObject.tag == "Enemy")
         {
             //ゲームオーバー処理
-            se_obj.SendMessage("Sound");
-            GameOver();
+            if(stage_manager.itemFlag == false)
+            {
+                se_obj.SendMessage("Sound");
+                GameOver();
+            }
+            else if(stage_manager.itemFlag == true)
+            {
+                col.gameObject.SendMessage("ItemHit");
+            }
+           
         }
     }
 
