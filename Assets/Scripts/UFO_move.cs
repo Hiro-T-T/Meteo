@@ -24,13 +24,11 @@ public class UFO_move : MonoBehaviour {
         pos = gameObject.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
-       // pos.z = 0;
-        pos.y = player.transform.position.y;
         start_pos = pos;
-        if(spawn.spawn_count % up_count == 0)
+        if(spawn.spawn_count % up_count == 0 && spawn.spawn_count != 0)
         {
-            stage_manager.add_speed *= 1.5f;
-            stage_manager.fuwa_add += 0.3f;
+            stage_manager.add_speed *= 1.1f;
+            stage_manager.fuwa_add += 0.1f;
         }
        
         stage_manager.fuwa_add_speed = (spawn.spawn_count) / 15;
@@ -46,7 +44,7 @@ public class UFO_move : MonoBehaviour {
     void Update()
     {
         gameObject.transform.position = pos;
-       
+        pos.y = player.transform.position.y;
         pos.z -= (fuwa_speed + stage_manager.add_speed);
         fuwa += stage_manager.fuwa_add;
         pos.x = start_pos.x + (Mathf.Sin(Mathf.PI * 2 / fuwa_time * fuwa)) * ((fuwa_range + stage_manager.fuwa_add_speed) * direction);
@@ -55,11 +53,9 @@ public class UFO_move : MonoBehaviour {
     {
         if (col.gameObject.tag == "Death")
         {
-            if(initFlag == true)
-            {
-               
-                spawn.timer = 0;  //初期化
-            }
+    
+              //  spawn.timer = 0;  //初期化
+            
             Destroy(gameObject);
         }
     }

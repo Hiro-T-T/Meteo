@@ -18,5 +18,6 @@ public class StageManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         game_rotate = (90 - game_rotate) / 30;
+        Debug.Log(fuwa_add);
 	}
 }

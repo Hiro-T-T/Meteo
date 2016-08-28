@@ -367,7 +367,6 @@ namespace Kvant
                     }
                 }
             }
-            Debug.Log(backgroundTime);
             
             if (_needsReset) ResetResources();
 
