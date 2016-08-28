@@ -62,56 +62,56 @@ public class Spawn : MonoBehaviour {
                   break;
 
             case 2:
-                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
-                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 2.4f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 2.4f, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
                 break;
 
             case 3:
-                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x + 2.4f, pos.y, pos.z), Quaternion.identity);
                 GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
                 break;
 
             case 4:
-                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[1], new Vector3(pos.x - 2.4f, pos.y, pos.z), Quaternion.identity);
                 GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
                 break;
 
             case 5:
                 spawn_time++;
-                if(spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                if(spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 2.4f, pos.y, pos.z), Quaternion.identity);
                 if(spawn_time == middle_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-                if(spawn_time == last_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                if(spawn_time == last_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 2.4f, pos.y, pos.z), Quaternion.identity);
                 if(spawn_time > last_time + 3) spawn_init();
                 break;
 
             case 6:
                 spawn_time++;
-                if (spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 1.8f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x + 2.4f, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time == middle_time) GameObject.Instantiate(enemy[0], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-                if (spawn_time == last_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 1.8f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == last_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 2.4f, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time > last_time + 3) spawn_init();
                 break;
             case 7:
                 spawn_time++;
-                if (spawn_time == 2) GameObject.Instantiate(enemy[0], new Vector3(pos.x + 3.0f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == 2) GameObject.Instantiate(enemy[0], new Vector3(pos.x + 4.5f, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time == middle_time) GameObject.Instantiate(enemy[1], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-                if (spawn_time == last_time) GameObject.Instantiate(enemy[0], new Vector3(pos.x - 3.0f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == last_time) GameObject.Instantiate(enemy[0], new Vector3(pos.x - 4.5f, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time > last_time + 3) spawn_init();
                 break;
             case 8:
                 spawn_time++;
-                if (spawn_time == 2) GameObject.Instantiate(enemy[0], new Vector3(pos.x + 3.5f, pos.y, pos.z), Quaternion.identity);
-                if (spawn_time == middle_time + 10) GameObject.Instantiate(enemy[0], new Vector3(pos.x - 3.5f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == 2) GameObject.Instantiate(enemy[0], new Vector3(pos.x + 5.0f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == middle_time + 10) GameObject.Instantiate(enemy[0], new Vector3(pos.x - 5.0f, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time == last_time + 10) GameObject.Instantiate(enemy[0], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
                 if (spawn_time > last_time + 13) spawn_init();
                 break;
             case 9:
                 
-                GameObject.Instantiate(enemy[0], new Vector3(pos.x + 2.0f, pos.y, pos.z), Quaternion.identity);
-                GameObject.Instantiate(enemy[0], new Vector3(pos.x - 2.0f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[0], new Vector3(pos.x + 3.0f, pos.y, pos.z), Quaternion.identity);
+                GameObject.Instantiate(enemy[0], new Vector3(pos.x - 3.0f, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
                 break;
 

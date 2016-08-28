@@ -10,10 +10,12 @@ public class playerMove : MonoBehaviour {
     public float move_limited = 1.5f;
     //public GameObject gameobject;
     public MoveResult result;
-
+    public GameObject effect;
+    private Vector3 ef_pos;
     // Use this for initialization
     void Start () {
         pos = gameObject.transform.position;
+        ef_pos = effect.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -41,14 +43,16 @@ public class playerMove : MonoBehaviour {
             currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + offset;
             //動け動け(´◉◞౪◟◉)
             transform.position = currentPosition;
-
+            effect.transform.position = currentPosition;
             if(transform.position.x > move_limited)
             {
                 transform.position = new Vector3(move_limited, pos.y, currentPosition.z);
+                effect.transform.position = new Vector3(move_limited, pos.y, currentPosition.z);
             }
             if(transform.position.x < -move_limited)
             {
                 transform.position = new Vector3(-move_limited, pos.y, currentPosition.z);
+                effect.transform.position = new Vector3(-move_limited, pos.y, currentPosition.z);
             }
 
         }

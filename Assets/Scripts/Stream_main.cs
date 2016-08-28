@@ -349,13 +349,13 @@ namespace Kvant
                 if (backgroundTime < 180)
                 {
                     _maxSpeed++;
-                    _tail = 200 / _maxSpeed;
+                    _tail = 300 / _maxSpeed;
                     if (_maxSpeed >= 1000) _maxSpeed = 1000;
                 }
                 else
                 {
                     _maxSpeed--;
-                    _tail = 200 / maxSpeed;
+                    _tail = 300 / maxSpeed;
                     if (_maxSpeed <= (3 * spawn.spawn_count))
                     {
                         _maxSpeed = (3 * spawn.spawn_count);
