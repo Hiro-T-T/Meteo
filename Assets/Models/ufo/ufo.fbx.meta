@@ -1,19 +1,15 @@
 fileFormatVersion: 2
-guid: 4410876dee6a9d348b1c4fb7894969a9
-timeCreated: 1472348818
+guid: 5a0b026ea23b7614e88d133bdd3a62fe
+timeCreated: 1472350944
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: ufo
-    100002: //RootNode
-    400000: ufo
-    400002: //RootNode
-    2300000: ufo
-    3300000: ufo
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: ufo
-    7400000: Take 001
-    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

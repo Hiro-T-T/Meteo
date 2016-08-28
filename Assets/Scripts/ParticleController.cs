@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class earthRotate : MonoBehaviour {
-
-    public float earth_rotate = 10f;
+public class ParticleController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +10,7 @@ public class earthRotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(new Vector3(0, 0, 0));
+
+        this.transform.rotation = new Quaternion(-90, 180, 0, 1);
     }
 }

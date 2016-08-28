@@ -8,7 +8,7 @@ public class playerMove : MonoBehaviour {
     private Vector3 offset;
     public Vector3 currentPosition;
     public float move_limited = 1.5f;
-    public GameObject gameobject;
+    //public GameObject gameobject;
     public MoveResult result;
 
     // Use this for initialization
