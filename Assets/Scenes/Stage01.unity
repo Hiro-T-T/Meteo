@@ -290,6 +290,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 1000011240627392, guid: c8747261a3f62ad4b92023f7a40475c1, type: 2}
   - {fileID: 1000012177350580, guid: 1417e76c438764c40852f1a0fdf964fd, type: 2}
+  - {fileID: 1000011729786888, guid: 70c53f3a8cde172499df8d483b24a5dd, type: 2}
   interval: 1
   timer: 0
   spawn_count: 0

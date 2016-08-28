@@ -45,7 +45,7 @@ public class Spawn : MonoBehaviour {
             {
                 Spawn_p(pattern);    //スポーン実行
             }
-            else pattern = Random.Range(1, 10);
+            else pattern = Random.Range(1, 13);
 
         }
 
@@ -114,7 +114,18 @@ public class Spawn : MonoBehaviour {
                 GameObject.Instantiate(enemy[0], new Vector3(pos.x - 3.0f, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
                 break;
-
+            case 10:
+                GameObject.Instantiate(enemy[2], new Vector3(pos.x + 1.5f, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
+            case 11:
+                GameObject.Instantiate(enemy[2], new Vector3(pos.x - 1.5f, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
+            case 12:
+                GameObject.Instantiate(enemy[2], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
 
         }
         
