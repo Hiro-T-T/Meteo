@@ -45,7 +45,7 @@ public class Spawn : MonoBehaviour {
             {
                 Spawn_p(pattern);    //スポーン実行
             }
-            else pattern = Random.Range(1, 13);
+            else pattern = Random.Range(13, 16);
 
         }
 
@@ -125,6 +125,24 @@ public class Spawn : MonoBehaviour {
             case 12:
                 GameObject.Instantiate(enemy[2], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
                 spawn_init();
+                break;
+            case 13:
+                GameObject.Instantiate(enemy[3], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawn_init();
+                break;
+            case 14:
+                spawn_time++;
+                if (spawn_time == 2) GameObject.Instantiate(enemy[1], new Vector3(pos.x - 2.4f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == middle_time) GameObject.Instantiate(enemy[3], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == last_time) GameObject.Instantiate(enemy[0], new Vector3(pos.x + 2.4f, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time > last_time + 3) spawn_init();
+                break;
+            case 15:
+                spawn_time++;
+                if (spawn_time == 2) GameObject.Instantiate(enemy[3], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == middle_time) GameObject.Instantiate(enemy[3], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time == last_time) GameObject.Instantiate(enemy[3], new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                if (spawn_time > last_time + 3) spawn_init();
                 break;
 
         }
