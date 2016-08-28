@@ -11,12 +11,18 @@ public class playerMove : MonoBehaviour {
     //public GameObject gameobject;
     public MoveResult result;
     public GameObject effect;
+    public GameObject se_obj;
     private Vector3 ef_pos;
+    //public AudioClip audioClip;
+    //AudioSource audioSource;
+
     // Use this for initialization
     void Start () {
         pos = gameObject.transform.position;
         ef_pos = effect.transform.position;
-	}
+        //audioSource = gameObject.GetComponent<AudioSource>();
+        //audioSource.clip = audioClip;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -63,8 +69,14 @@ public class playerMove : MonoBehaviour {
         if (col.gameObject.tag == "Enemy")
         {
             //ゲームオーバー処理
-            Destroy(gameObject);
-            result.resultFlag = true;
+            se_obj.SendMessage("Sound");
+            GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        Destroy(gameObject);
+        result.resultFlag = true;
     }
 }

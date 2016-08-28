@@ -14,6 +14,9 @@ public class moveScene : MonoBehaviour
     float m_DeltaTime = 0.0333f;
     Coroutine m_Coroutine;
     public float moveSceneSec = 2.0f;
+    public AudioClip audioClip;
+    AudioSource audioSource;
+    private bool se_on = false;
 
     void Reset()
     {
@@ -23,6 +26,12 @@ public class moveScene : MonoBehaviour
     void Awake()
     {
         StartFlash();
+    }
+
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
     }
 
     IEnumerator Flash()
@@ -36,14 +45,21 @@ public class moveScene : MonoBehaviour
             color.a = Mathf.Abs(Mathf.Sin(m_Time));
             m_Graphics.color = color;
             yield return new WaitForSeconds(m_DeltaTime);
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && se_on == false)
             {
-                m_DeltaTime = 0.1f;
-                m_AngularFrequency = 11f;
-                Debug.Log("press");
-                Invoke("DelayMethod", moveSceneSec);
+                se_on = true;
+                SceneSE();
             }
         }
+    }
+
+    void SceneSE()
+    {
+        audioSource.PlayOneShot(audioClip);
+        m_DeltaTime = 0.1f;
+        m_AngularFrequency = 11f;
+        Debug.Log("press");
+        Invoke("DelayMethod", moveSceneSec);
     }
 
     private void DelayMethod()

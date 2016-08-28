@@ -9,8 +9,12 @@ namespace Kvant
     [ExecuteInEditMode, AddComponentMenu("Kvant/Stream")]
     public class Stream_main : MonoBehaviour
     {
-        
-         int knobNumber1 = 16;
+
+        public AudioClip audioClip;
+        AudioSource audioSource;
+        private bool se_on = false;
+
+        int knobNumber1 = 16;
 	     int knobNumber2 = 17;
 	     int knobNumber3 = 18;
          int knobNumber4 = 19;
@@ -337,6 +341,8 @@ namespace Kvant
         {
             stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
             spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
+            audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = audioClip;
         }
 
         void Update()
@@ -348,6 +354,7 @@ namespace Kvant
                 backgroundTime++;
                 if (backgroundTime < 180)
                 {
+                    audioSource.PlayOneShot(audioClip);
                     _maxSpeed++;
                     _tail = 300 / _maxSpeed;
                     if (_maxSpeed >= 1000) _maxSpeed = 1000;

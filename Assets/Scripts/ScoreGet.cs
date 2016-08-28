@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ScoreGet : MonoBehaviour {
     private ScoreManager score_manager;
-    public int add_score = 100;
     private Spawn spawn;
 	// Use this for initialization
 	void Start () {
@@ -19,8 +18,8 @@ public class ScoreGet : MonoBehaviour {
     {
         if(col.gameObject.tag == "Player")
         {
-            score_manager.score += add_score;
             Destroy(gameObject);
+            score_manager.AddScore();
         }
     }
 }

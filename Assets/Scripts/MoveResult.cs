@@ -24,7 +24,7 @@ public class MoveResult : MonoBehaviour {
     {
         if (resultFlag)
         {
-            Invoke("end", 2.0f);
+            Invoke("end", 3.0f);
         }
     }
 }
