@@ -13,10 +13,11 @@ public class EnemyMove : MonoBehaviour {
     void Start () {
         stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
         spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
-        if (spawn.spawn_count % up_count == 0)
+        if (spawn.spawn_count % up_count == 0 && spawn.spawn_count != 0)
         {
-            stage_manager.add_speed *= 1.5f;
+            stage_manager.add_speed *= 1.15f;
             stage_manager.fuwa_add += 0.3f;
+            Debug.Log("speedUp");
         }
     }
 	
@@ -31,11 +32,8 @@ public class EnemyMove : MonoBehaviour {
     {
         if (col.gameObject.tag == "Death")
         {
-            if (initFlag == true)
-            {
+              //  spawn.timer = 0;  //初期化
 
-                spawn.timer = 0;  //初期化
-            }
             Destroy(gameObject);
         }
     }
