@@ -45,7 +45,7 @@ public class Spawn : MonoBehaviour {
             {
                 Spawn_p(pattern);    //スポーン実行
             }
-            else pattern = Random.Range(13, 16);
+            else pattern = Random.Range(1, 16);
 
         }
 

@@ -265,7 +265,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -370,6 +370,7 @@ MonoBehaviour:
   - {fileID: 1000011240627392, guid: c8747261a3f62ad4b92023f7a40475c1, type: 2}
   - {fileID: 1000012177350580, guid: 1417e76c438764c40852f1a0fdf964fd, type: 2}
   - {fileID: 1000011729786888, guid: 70c53f3a8cde172499df8d483b24a5dd, type: 2}
+  - {fileID: 1000011261338138, guid: aa4d76cf9862472448fb66e71f574cbf, type: 2}
   interval: 1
   timer: 0
   spawn_count: 0
@@ -548,7 +549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &890042891
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -760,7 +761,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1036,6 +1037,11 @@ Prefab:
       propertyPath: score_text
       value: 
       objectReference: {fileID: 1322316963}
+    - target: {fileID: 114000010304957536, guid: 919f382ac4163cb47b037333de1b6215,
+        type: 2}
+      propertyPath: move_result
+      value: 
+      objectReference: {fileID: 137208483}
     m_RemovedComponents:
     - {fileID: 114000012310222684, guid: 919f382ac4163cb47b037333de1b6215, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 919f382ac4163cb47b037333de1b6215, type: 2}
@@ -1197,7 +1203,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1394,6 +1400,10 @@ Prefab:
     - target: {fileID: 4000010111144442, guid: 169cbef8192164243a0b3376dfb529cf, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012078749946, guid: 169cbef8192164243a0b3376dfb529cf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000010631115466, guid: 169cbef8192164243a0b3376dfb529cf, type: 2}
