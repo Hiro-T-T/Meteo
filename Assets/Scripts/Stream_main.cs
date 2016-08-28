@@ -373,6 +373,31 @@ namespace Kvant
                         stage_manager.backgroundFlag = false;
                     }
                 }
+
+                if (stage_manager.itemFlag == true)
+                {
+                    backgroundTime++;
+                    if (backgroundTime < 180)
+                    {
+                        audioSource.PlayOneShot(audioClip);
+                        _maxSpeed++;
+                        _tail = 300 / _maxSpeed;
+                        if (_maxSpeed >= 1000) _maxSpeed = 1000;
+                    }
+                    else
+                    {
+                        _maxSpeed--;
+                        _tail = 300 / maxSpeed;
+                        if (backgroundTime > 360)
+                        {
+                            spawn.interval = 0;
+                            //spawn.SendMessage("Spawn_p");
+                            backgroundTime = 0;
+                            stage_manager.itemFlag = false;
+                        }
+                    }
+
+                }
             }
             
             if (_needsReset) ResetResources();
