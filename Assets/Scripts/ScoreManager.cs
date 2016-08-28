@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour {
 
     public int score = 0;
 
+
 	// Use this for initialization
 	void Start () {
 	
