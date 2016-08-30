@@ -167,8 +167,8 @@ public class Spawn : MonoBehaviour {
         }
         else
         {
-            interval = 2.0f - dec_interval;
-            if (interval < 0.5) interval = 0.5f;
+            interval = 1.5f - dec_interval;
+            if (interval < 0.3) interval = 0.3f;
         }
 
         

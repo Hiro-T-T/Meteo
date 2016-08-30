@@ -8,7 +8,7 @@ public class UFO_move : MonoBehaviour {
     private GameObject player;
     public float fuwa = 0.0f;
     public int fuwa_time = 240;
-   
+    private MoveResult result;
     public float fuwa_range = 2.0f;
     public float fuwa_speed = 0.1f;
     private int fuwa_random = Random.Range(1, 3);
@@ -21,6 +21,7 @@ public class UFO_move : MonoBehaviour {
     void Start()
     {
         stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
+        result = GameObject.Find("GameController").GetComponent<MoveResult>();
         pos = gameObject.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.Find("spawn_object").GetComponent<Spawn>();
@@ -37,6 +38,7 @@ public class UFO_move : MonoBehaviour {
             direction *= -1;
             
         }
+        if(!result.resultFlag) pos.y = player.transform.position.y;
 
     }
 
@@ -44,7 +46,7 @@ public class UFO_move : MonoBehaviour {
     void Update()
     {
         gameObject.transform.position = pos;
-        pos.y = player.transform.position.y;
+       
         pos.z -= (fuwa_speed + stage_manager.add_speed);
         fuwa += stage_manager.fuwa_add;
         pos.x = start_pos.x + (Mathf.Sin(Mathf.PI * 2 / fuwa_time * fuwa)) * ((fuwa_range + stage_manager.fuwa_add_speed) * direction);

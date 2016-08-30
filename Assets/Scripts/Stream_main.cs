@@ -352,10 +352,14 @@ namespace Kvant
             if(stage_manager.backgroundFlag == true)
             {
                 backgroundTime++;
-                if (backgroundTime < 180)
+                if (backgroundTime < 90)
                 {
-                    audioSource.PlayOneShot(audioClip);
-                    _maxSpeed++;
+                    if(backgroundTime < 2)
+                    {
+                        audioSource.PlayOneShot(audioClip);
+                    }
+                   
+                    _maxSpeed += 2;
                     _tail = 300 / _maxSpeed;
                     if (_maxSpeed >= 1000) _maxSpeed = 1000;
                 }
