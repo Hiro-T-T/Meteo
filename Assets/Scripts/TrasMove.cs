@@ -30,7 +30,7 @@ public class TrasMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0, -(enemy_speed + stage_manager.add_speed));
+        transform.position += new Vector3(0, 0, -(enemy_speed + stage_manager.add_speed + stage_manager.item_speed));
        // transform.Rotate(new Vector3(1, 0, 0), -rx);
         //  transform.Rotate(new Vector3(0, 0, 0), -ry);
         transform.Rotate(new Vector3(0, 1, 1), -rx);
@@ -43,5 +43,9 @@ public class TrasMove : MonoBehaviour {
 
             Destroy(gameObject);
         }
+    }
+    void ItemHit()
+    {
+        enemy_speed = -(5 + stage_manager.item_speed);
     }
 }
