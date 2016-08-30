@@ -202,7 +202,9 @@ MonoBehaviour:
   add_speed: 0.2
   fuwa_add_speed: 2
   fuwa_add: 2
+  item_speed: 10
   backgroundFlag: 0
+  itemFlag: 0
 --- !u!82 &137208487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -336,6 +338,11 @@ Prefab:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 34f6092f96a862a42be807be3846e7a1, type: 3}
+    - target: {fileID: 114000011757460486, guid: bf4eb4b0a9229da44b2a5dc149be6496,
+        type: 2}
+      propertyPath: color_return
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf4eb4b0a9229da44b2a5dc149be6496, type: 2}
   m_IsPrefabParent: 0

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fc565340dcb824584620b3b55934ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_speed: 0.01
+  enemy_speed: 0.02
   rx: 10
   ry: 10
   rz: 10
@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64bbc1593222da47958a4f25507410e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  add_score: 50
 --- !u!135 &135000011784452840
 SphereCollider:
   m_ObjectHideFlags: 1

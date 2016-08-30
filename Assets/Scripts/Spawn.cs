@@ -158,7 +158,7 @@ public class Spawn : MonoBehaviour {
         if (spawn_count % 10 == 0)
         {
             interval = 5.0f;
-            dec_interval = spawn_count / 20;
+            dec_interval = spawn_count / 30;
             middle_time = middle_time - spawn_count / 2;
             if (middle_time < 12) middle_time = 12;
             last_time = last_time - spawn_count / 2;

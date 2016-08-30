@@ -336,7 +336,8 @@ namespace Kvant
         private StageManager stage_manager;
         private Spawn spawn;
         private int backgroundTime = 0;
-
+        private float color_num;
+        public float color_return = 90.0f;
         void Start()
         {
             stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
@@ -358,18 +359,21 @@ namespace Kvant
                     {
                         audioSource.PlayOneShot(audioClip);
                     }
-                   
+                    color_num = Random.Range(0.1f, 1.0f);
+                    _color = new Color(color_num * 2,color_num * 2,color_num);
                     _maxSpeed += 2;
                     _tail = 300 / _maxSpeed;
                     if (_maxSpeed >= 1000) _maxSpeed = 1000;
                 }
                 else
                 {
-                    _maxSpeed--;
+                    _maxSpeed -= 2;
                     _tail = 300 / maxSpeed;
+                    _color = new Color(_color.r + ((0.31f - _color.r)) / (color_return/2), _color.g + ((0.27f - _color.g)) / (color_return/2), _color.b + ((0.27f - _color.b)) / color_return);
                     if (_maxSpeed <= (3 * spawn.spawn_count))
                     {
                         _maxSpeed = (3 * spawn.spawn_count);
+                        
                         spawn.spawn_count++;
                         spawn.interval = 0;
                         //spawn.SendMessage("Spawn_p");

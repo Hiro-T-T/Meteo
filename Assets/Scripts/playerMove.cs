@@ -22,6 +22,7 @@ public class playerMove : MonoBehaviour {
         pos = gameObject.transform.position;
         ef_pos = effect.transform.position;
         stage_manager = GameObject.Find("GameController").GetComponent<StageManager>();
+        effect.transform.position = transform.position;
         //audioSource = gameObject.GetComponent<AudioSource>();
         //audioSource.clip = audioClip;
     }
